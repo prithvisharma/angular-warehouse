@@ -1,16 +1,2 @@
-<h1>Array of Objects Iteration</h1>
-<button (click)='showStudent()'>Show Students</button>
-|
-<button (click)='showNonStudent()'>Show Non-Students</button>
-<BR>
-<BR>
-<div *ngFor="let customer of customers">
-    <div *ngIf="customer.isStudent === isShow || initial==true">
-        Name is: {{customer.name }}
-        <BR> Age is: {{customer.age }}
-        <BR> Is Student?: {{customer.isStudent }}
-        <BR> CGPA is: {{customer.cgpa }}
-        <BR>
-        <hr>
-    </div>
-</div>
+<app-navbar></app-navbar>
+<app-customers></app-customers>
