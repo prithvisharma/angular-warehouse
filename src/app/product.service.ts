@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
-
+import { data } from './datasource'
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
   products: Product[] = [];
-  constructor() { }
+  constructor() {
+    this.products = data;
+  }
+
 
   addProduct(product: Product) {
     //adds your product to products array

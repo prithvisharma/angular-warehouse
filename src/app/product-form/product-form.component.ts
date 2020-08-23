@@ -16,7 +16,8 @@ export class ProductFormComponent implements OnInit {
     name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     category: new FormControl(''),
     serialNo: new FormControl(''),
-    stockCount: new FormControl('')
+    stockCount: new FormControl(''),
+    price: new FormControl(''),
   });
 
   constructor(public productService: ProductService) { }
