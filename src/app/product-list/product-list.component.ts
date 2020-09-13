@@ -24,19 +24,18 @@ export class ProductListComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(private productService: ProductService) {
-    //fetch data from service and attach it in ELEMENT_DATA variable 
-    this.ELEMENT_DATA = productService.fetchProducts();
-
-    //attach ELEMENT_DATA variable to datasource. 
-    this.dataSource = new MatTableDataSource<Product>(this.ELEMENT_DATA);
   }
 
   ngOnInit(): void {
-    this.ELEMENT_DATA = this.productService.fetchProducts();
-    //add paging to datasource
-    this.dataSource.paginator = this.paginator;
-    //add sorting to datasource
-    this.dataSource.sort = this.sort;
+    this.productService.fetchProducts().subscribe(
+      data => {
+        this.dataSource = new MatTableDataSource<Product>(data);
+        this.dataSource.paginator = this.paginator;
+        //add sorting to datasource
+        this.dataSource.sort = this.sort;
+      }
+    );
+
   }
 }
 
