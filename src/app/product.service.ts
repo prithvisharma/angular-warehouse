@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Product } from './product.model';
 import { data } from './datasource'
+import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-  products: Product[] = [];
+  products$ = new BehaviorSubject<Product[]>([]);
   constructor() {
-    this.products = data;
+    this.products$.next(data);
   }
-
-
-  addProduct(product: Product) {
-    //adds your product to products array
-    this.products.push(product);
+  addProduct(product: Product) { //14th
+    let products = [];
+    //step 1 : fetch all products from subject 
+    products = this.products$.value; //13 
+    //step 2: add new value to products[] array
+    products.push(product); //14
+    //step 3: give next value to subject 
+    this.products$.next(products); //14
   }
-
-  fetchProducts() {
-    //return the array
-    return this.products;
+  fetchProducts(): Observable<Product[]> {
+    return this.products$;
   }
 }
