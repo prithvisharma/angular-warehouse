@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ProductService } from './product.service';
+import { ProductService } from './product/product.service';
 
 
 @Component({
@@ -9,11 +9,8 @@ import { ProductService } from './product.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private productService: ProductService) { }
+  constructor( ) { }
 
-  onProductAdd(product) {
-    this.productService.addProduct(product);
-  }
-
+  
 
 }
