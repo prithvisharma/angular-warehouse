@@ -1,16 +1,19 @@
-<h1> Product Dynamic Addition</h1>
+<div class="basic-container">
+    <h1>{{category}}</h1>
+</div>
 
-<div style="margin-left: 10px;">
-    <table style="width: 100%;" border="1">
 
-        <tr>
-            <td style="width: 40%">
+<div class="basic-container">
+    <div fxLayout="row" fxLayoutAlign="strecth" fxLayoutGap="15px">
+        <mat-card fxFlex="Dynamic">
+            <mat-card-content>
                 <app-product-form></app-product-form>
-            </td>
-            <td style="width: 60%">
+            </mat-card-content>
+        </mat-card>
+        <mat-card fxFlex="Dynamic">
+            <mat-card-content>
                 <app-product-list></app-product-list>
-            </td>
-        </tr>
-
-    </table>
+            </mat-card-content>
+        </mat-card>
+    </div>
 </div>

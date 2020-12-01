@@ -1,4 +1,4 @@
-import { Product } from './product.model';
+import { Product } from './product/product.model';
 
 export let data: Product[] = [
     {
@@ -97,9 +97,22 @@ export let data: Product[] = [
         'serialNo': 'CB45262747',
         'stockCount': 15,
         'price': 29000
+    },
+    {
+
+        'name': 'Cruzer Blade 16GB',
+        'category': 'Accessories',
+        'serialNo': 'ASDCB000160',
+        'stockCount': 15,
+        'price': 1500
+    },
+    {
+
+        'name': 'Kingston 32GB',
+        'category': 'Accessories',
+        'serialNo': 'ASDCB000160',
+        'stockCount': 15,
+        'price': 2200
     }
-
-
-
 ];
 

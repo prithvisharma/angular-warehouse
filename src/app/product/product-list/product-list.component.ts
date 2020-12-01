@@ -12,6 +12,7 @@ import { MatSort } from '@angular/material/sort';
 export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
+  category: string;
 
   //Mat Table Props
   displayedColumns: string[] = ['serialNo', 'name', 'category', 'stockCount', 'price'];
@@ -27,15 +28,20 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.fetchProducts().subscribe(
-      data => {
-        this.dataSource = new MatTableDataSource<Product>(data);
-        this.dataSource.paginator = this.paginator;
-        //add sorting to datasource
-        this.dataSource.sort = this.sort;
+    this.productService.getCategory().subscribe(
+      c => {
+        this.category = c;
+        this.productService.fetchProducts().subscribe(
+          data => {
+            data = data.filter(e => e.category === this.category)
+            this.dataSource = new MatTableDataSource<Product>(data);
+            this.dataSource.paginator = this.paginator;
+            //add sorting to datasource
+            this.dataSource.sort = this.sort;
+          }
+        );
       }
     );
-
   }
 }
 

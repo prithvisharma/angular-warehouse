@@ -8,6 +8,7 @@ import { ProductService } from './product.service';
 })
 export class ProductComponent implements OnInit {
 
+  category: string;
   constructor(private productService: ProductService) { }
 
   onProductAdd(product) {
@@ -15,7 +16,8 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.productService.getCategory().subscribe(
+      c => this.category = c
+    );
   }
-
 }

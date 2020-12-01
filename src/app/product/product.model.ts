@@ -7,3 +7,12 @@ export interface Product {
     stockCount: number,
     price: number
 }
+
+
+
+export interface Donut {
+    product: string;
+    value: number;
+    text: string;
+}
+

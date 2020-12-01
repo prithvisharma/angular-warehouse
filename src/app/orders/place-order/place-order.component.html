@@ -1,0 +1,40 @@
+<div class="basic-container">
+    <h2>Place Order</h2>
+</div>
+<form class="example-form" [formGroup]="orderForm" (ngSubmit)="onFormSubmit()">
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Name:</mat-label>
+        <input matInput placeholder="Enter the product name" value="" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category">
+            <mat-option *ngFor="let category of category" [value]="category.value">
+                {{category.viewValue}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Serial No:</mat-label>
+        <input matInput placeholder="Enter the product searial no." value="" formControlName="serialNo">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Stock Count:</mat-label>
+        <input matInput placeholder="Enter the product stock count" value="" formControlName="stockCount">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Price:</mat-label>
+        <input matInput placeholder="Enter the product stock count" value="" formControlName="price">
+    </mat-form-field>
+    <BR>
+    <BR>
+    <div class="example-button-row">
+        <button mat-raised-button color="primary" type="submit" [disabled]='!orderForm.valid'>Add Product</button>
+    </div>
+
+</form>

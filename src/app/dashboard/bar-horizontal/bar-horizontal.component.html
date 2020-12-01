@@ -1,0 +1,8 @@
+<ejs-chart #chart style='display:block;' [chartArea]='chartArea' align='center' id='chartcontainer'
+    [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [title]='title' [tooltip]='tooltip'
+    (load)='load($event)' [palettes]='palette'>
+    <e-series-collection>
+        <e-series [dataSource]='data' type='StackingBar' xName='product' yName='value'>
+        </e-series>
+    </e-series-collection>
+</ejs-chart>
