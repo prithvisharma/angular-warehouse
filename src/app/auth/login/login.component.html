@@ -7,13 +7,13 @@
     <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
 
         <mat-form-field class="example-full-width">
-            <mat-label>Username:(harry)</mat-label>
-            <input matInput placeholder="Enter the product name" value="" formControlName="username">
+            <mat-label>Username:</mat-label>
+            <input matInput placeholder="Enter username as harry" value="" formControlName="username">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-            <mat-label>Password:(password)</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter the product category" value=""
+            <mat-label>Password:</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Enter password as potter" value=""
                 formControlName="password">
         </mat-form-field>
         <BR>
